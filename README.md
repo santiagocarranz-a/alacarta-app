@@ -1,3 +1,8 @@
+
+npm install --save bootstrap
+npm install --save jquery
+npm install --save popper.js
+
 # ALaCarta
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.

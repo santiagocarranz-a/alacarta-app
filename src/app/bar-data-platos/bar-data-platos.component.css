@@ -1,0 +1,13 @@
+.container-barData ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    background-color: rgb(46, 201, 123);
+}
+
+@media (max-width: 568px){
+    .container-barData ul{
+        flex-direction: column;
+    }
+     
+}

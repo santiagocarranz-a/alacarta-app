@@ -13,6 +13,7 @@ import { BarDataPlatosComponent } from './bar-data-platos/bar-data-platos.compon
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes:Routes=[
+  {path:"home",component:HomeComponent},
   {path:"form",component:FormComponent},
   {path:"detallePlato",component:DetallePlatoComponent},
   {path:"buscadorDePlatos",component:BuscadorDePlatosComponent}
