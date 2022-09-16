@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { PlatosService } from 'src/services/platos.service';
 @Component({
   selector: 'app-buscador-de-platos',
   templateUrl: './buscador-de-platos.component.html',
@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscadorDePlatosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private platosService:PlatosService) { }
+
+  getPlatos(){
+    let busqueda: string = (<HTMLInputElement>document.getElementById('txtPlato')).value;
+    this.platosService.getPlatos(busqueda).subscribe(platos =>{
+      console.log(platos)
+    })
+  }
+
 
   ngOnInit(): void {
   }
