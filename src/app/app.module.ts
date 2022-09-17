@@ -8,7 +8,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BarDataPlatosComponent } from './bar-data-platos/bar-data-platos.component';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import { PlatosItemComponent } from './platos-item/platos-item.component'
+import { PlatosItemComponent } from './platos-item/platos-item.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 
 
@@ -20,6 +21,7 @@ import { PlatosItemComponent } from './platos-item/platos-item.component'
     NavBarComponent,
     BarDataPlatosComponent,
     PlatosItemComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,

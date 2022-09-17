@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-platos-item',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatosItemComponent implements OnInit {
 
+  @Input() plato: any;
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+ 
 
 }

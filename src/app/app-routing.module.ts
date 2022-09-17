@@ -4,12 +4,13 @@ import { BuscadorDePlatosComponent } from './buscador-de-platos/buscador-de-plat
 import { DetallePlatoComponent } from './detalle-plato/detalle-plato.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 const routes:Routes=[
   {path:"home", component:HomeComponent},
   {path:"form",component:FormComponent},
   {path:"detallePlato",component:DetallePlatoComponent},
-  {path:"buscadorDePlatos",component:BuscadorDePlatosComponent}
+  {path:"searchPage",component:SearchPageComponent}
 ]
 
 @NgModule({
