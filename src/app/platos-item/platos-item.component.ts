@@ -1,5 +1,7 @@
+import { JsonPipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { HomePlatosService } from 'src/services/home-platos.service'; 
+
 @Component({
   selector: 'app-platos-item',
   templateUrl: './platos-item.component.html',
@@ -17,6 +19,7 @@ export class PlatosItemComponent implements OnInit {
 
  agregarPlato(plato:any){
   this.HPS.agregarPlato(plato);
+  
   console.log(this.HPS.arrayPlatos)
  }
 

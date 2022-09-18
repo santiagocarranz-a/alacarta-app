@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Oswald&display=swap');
+*{
+    font-family: 'Oswald';
+
+}
+
 .background{
-    background:no-repeat center fixed url("https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg");
+    background:no-repeat center fixed url("../../assets/img/localForm-min.jpg");
+    
     background-size: cover;
 }
 .container{
@@ -11,7 +18,7 @@
     font-size: 1.5rem;
 }
 .target{
-    background-color: rgba(0, 0, 0, 0.658);
+    background-color: rgba(0, 0, 0, 0.808);
     padding: 2rem;
     border-radius: .3rem;
     
@@ -19,7 +26,7 @@
 .text-saludo{
 margin-bottom: 2rem;
 text-align: center;
-color: rgb(106, 241, 43);
+color: rgb(28, 219, 69);
 }
 .target button{
     margin-top: .5rem;
