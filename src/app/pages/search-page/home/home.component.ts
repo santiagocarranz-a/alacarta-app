@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HomePlatosService} from 'src/services/home-platos.service'
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  arrayPlatos:any = [];
+
+  constructor( private HPS: HomePlatosService) { }
 
   ngOnInit(): void {
+
+    this.arrayPlatos = this.HPS.arrayPlatos
   }
 
 }

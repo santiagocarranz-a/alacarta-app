@@ -8,12 +8,13 @@ import { environment } from 'src/environments/environment';
 export class PlatosService {
 
   private apiUrl:string=environment.apiUrl;
-  private apiKey:string=environment.apiKey;
+  //private apiKey1:string=environment.apiKey1;
+  private apiKey2:string=environment.apiKey2;
 
   constructor( private http: HttpClient) { }
 
   getPlatos (busqueda:string){
-    return this.http.get(`${this.apiUrl}recipes/complexSearch?apiKey=${this.apiKey}&query=${busqueda}&addRecipeInformation=true&addRecipeNutrition=true`)
+    return this.http.get(`${this.apiUrl}recipes/complexSearch?apiKey=${this.apiKey2}&query=${busqueda}&addRecipeInformation=true&addRecipeNutrition=true`)
   }
 
 

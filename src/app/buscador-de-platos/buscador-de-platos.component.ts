@@ -17,6 +17,7 @@ export class BuscadorDePlatosComponent implements OnInit {
   getPlatos(){
     let busqueda: string = (<HTMLInputElement>document.getElementById('txtPlato')).value;
     this.platosService.getPlatos(busqueda).subscribe((platos:any) =>{
+
       this.catalogoPlatos.emit(platos.results);
     })
   }
