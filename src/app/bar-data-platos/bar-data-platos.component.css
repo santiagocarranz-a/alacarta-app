@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Oswald&display=swap');
+
 .container-barData ul{
+    font-family: 'Oswald';
     display: flex;
     justify-content: space-between;
     list-style: none;
-    background-color: rgb(46, 201, 123);
+    background-color: rgba(160, 152, 142, 0.267);
+    padding: 0 1.5rem 0 1.5rem;
 }
 
 @media (max-width: 568px){

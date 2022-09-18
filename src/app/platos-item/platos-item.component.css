@@ -2,12 +2,19 @@
     padding: 1rem;
     margin: 1rem;
 }
-.container-items{
+.container-divs{
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    flex-wrap: wrap;
+}
+.container-divs img{
+    border-radius: .3rem;
 }
 
+.container-divs ul {
+    margin-bottom: 1rem;
+}
 
 .card{
     padding: 1rem;
@@ -22,4 +29,13 @@
 
 h2{
     padding: 1rem;
+}
+
+.cont-button{
+    display: flex;
+    justify-content: center;
+}
+
+.cont-button button{
+    margin: 2px;
 }

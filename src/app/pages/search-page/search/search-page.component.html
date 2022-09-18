@@ -1,7 +1,8 @@
 <app-buscador-de-platos (catalogoPlatos)="capturarCatalogoPlatos($event)"></app-buscador-de-platos>
 
-<div class="container">
-    <div *ngFor="let item of arrayPlatos">
+
+<div class="container-items">
+    <div class="item" *ngFor="let item of arrayPlatos">
         <app-platos-item [plato]="item"></app-platos-item>
     </div>
 </div>

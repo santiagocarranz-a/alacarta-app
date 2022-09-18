@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&family=Oswald&display=swap');
+
+*{
+    font-family: 'Oswald';
+}
 .search{
     display: flex;
     padding: 1rem;
 }
+.divH2{
+    
+    background-color: black;
+    margin-top: 1rem;
+}
 
 h2{
     padding: 1rem;
+    color: aliceblue;
 }

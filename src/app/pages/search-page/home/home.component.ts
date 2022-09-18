@@ -14,7 +14,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.arrayPlatos = this.HPS.arrayPlatos
+  }
+
+  mostrarArray(){
+    console.log(this.arrayPlatos)
   }
 
 }

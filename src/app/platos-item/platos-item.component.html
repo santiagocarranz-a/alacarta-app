@@ -1,7 +1,6 @@
+<div class="container-divs">
 
-<div class="container-items row">
-
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 19rem;">
       <img src="{{plato.image}}" class="card-img-top" alt="..." >
       <div class="card-body">
         <h4 class="card-title">{{plato.title}}</h4>
@@ -13,11 +12,10 @@
         <li class="list-group-item">Health Score: {{plato.healthScore}}</li>
         <li class="list-group-item">Vegano: {{plato.vegan===true?"si":"no"}}</li>
       </ul>
-      <div class="card-body">
-        <button href="" class="card-link" (click)="agregarPlato(plato)">Agregar</button>
-        <button href="" class="card-link">Eliminar</button>
-        <button href="" class="card-link">Detalles</button>
+      <div class="cont-button">
+        <button href="" type="button" class="btn btn-success" (click)="agregarPlato(plato)">Agregar</button>
+        <button href="" type="button" class="btn btn-warning">Eliminar</button>
+        <button href="" type="button" class="btn btn-info">Detalles</button>
       </div>
   </div>
 </div>
-
