@@ -9,6 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { PlatosItemComponent } from './platos-item/platos-item.component';
 import { SearchPageComponent } from './pages/search-page/search/search-page.component';
+import { HomePlatosService } from 'src/services/home-platos.service';
+import { PlatosService } from 'src/services/platos.service';
 
 
 
@@ -28,7 +30,7 @@ import { SearchPageComponent } from './pages/search-page/search/search-page.comp
     RouterModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [HomePlatosService,PlatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
