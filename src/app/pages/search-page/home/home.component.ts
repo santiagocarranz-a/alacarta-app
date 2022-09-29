@@ -14,10 +14,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-  }
+      this.HPS.obtenerPlatos().subscribe(data=>{
+        this.arrayPlatos=Object.values(data);
+        this.HPS.SetArrayPlatos(this.arrayPlatos)
+      })
 
-  mostrarArray(){
-    console.log(this.arrayPlatos)
   }
 
 }

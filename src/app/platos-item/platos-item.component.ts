@@ -17,8 +17,8 @@ export class PlatosItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
- agregarPlato(plato:any){
-  this.HPS.agregarPlato(plato);
+  guardarPlatos(plato:any){
+  this.HPS.guardarPlatos(plato);
   
   console.log(this.HPS.arrayPlatos)
  }
