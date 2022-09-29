@@ -12,5 +12,3 @@ Challenge Alkemy
 <br>
 Create by Santiago Carranza 
 
-
-
