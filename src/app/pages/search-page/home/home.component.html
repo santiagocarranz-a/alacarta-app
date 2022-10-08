@@ -1,9 +1,9 @@
 <div>
-  <app-bar-data-platos></app-bar-data-platos>
+  <app-bar-data-platos ></app-bar-data-platos>
 </div>
 
 <div class="cont">
-  <div *ngFor="let item of arrayPlatos">
+  <div  *ngFor="let item of arrayPlatos">
     <app-platos-item [plato]="item" ></app-platos-item>
   </div>
 </div>
