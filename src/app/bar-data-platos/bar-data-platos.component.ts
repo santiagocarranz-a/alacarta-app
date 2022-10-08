@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import {HomePlatosService} from 'src/services/home-platos.service'
 
 @Component({
   selector: 'app-bar-data-platos',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarDataPlatosComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public HPS :HomePlatosService) { }
+  
   ngOnInit(): void {
+    this.HPS.dataParaBarDataComponent()
   }
 
 }

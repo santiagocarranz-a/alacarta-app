@@ -1,4 +1,6 @@
+import { NgForOf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { PlatosItemComponent } from 'src/app/platos-item/platos-item.component';
 import {HomePlatosService} from 'src/services/home-platos.service'
 
 @Component({
@@ -8,17 +10,18 @@ import {HomePlatosService} from 'src/services/home-platos.service'
 })
 export class HomeComponent implements OnInit {
 
-  arrayPlatos:any = [];
+  arrayPlatos:any = [] ;
 
   constructor( private HPS: HomePlatosService) { }
 
   ngOnInit(): void {
 
-      this.HPS.obtenerPlatos().subscribe(data=>{
+    this.HPS.getPlatos().subscribe(data=>{
         this.arrayPlatos=Object.values(data);
-        this.HPS.SetArrayPlatos(this.arrayPlatos)
-      })
-
-  }
-
+        this.HPS.newArrayPlatos(this.arrayPlatos);
+        
+        
+    })
+  }  
 }
+

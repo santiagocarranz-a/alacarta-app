@@ -10,17 +10,23 @@ import { HomePlatosService } from 'src/services/home-platos.service';
 export class PlatosItemComponent implements OnInit {
 
   @Input() plato: any;
-
-
+  
   constructor(private HPS: HomePlatosService) { }
 
-  ngOnInit(): void {
+  guardarPlatos(plato:any){
+  this.HPS.addPlato(plato);
   }
 
-  guardarPlatos(plato:any){
-  this.HPS.guardarPlatos(plato);
-  
-  console.log(this.HPS.arrayPlatos)
- }
+  eliminarPlatos(plato:any){
+    const platoAEliminar = plato
+    const arrayPlatoBorrado = this.HPS.arrayPlatos.filter(data => data != platoAEliminar)
+    this.HPS.newArrayPlatos(arrayPlatoBorrado)
+    console.log(this.HPS.arrayPlatos)
+    this.HPS.putPlato()
+    
 
+  }
+
+
+  ngOnInit(): void {}
 }
