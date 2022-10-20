@@ -17,11 +17,16 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.HPS.getPlatos().subscribe(data=>{
+      if(data!=null || undefined){
         this.arrayPlatos=Object.values(data);
         this.HPS.newArrayPlatos(this.arrayPlatos);
-        
-        
+        }else{
+          console.log("no hay platos")
+        }
+
     })
+
   }  
+
 }
 

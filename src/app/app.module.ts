@@ -11,7 +11,7 @@ import { PlatosItemComponent } from './platos-item/platos-item.component';
 import { SearchPageComponent } from './pages/search-page/search/search-page.component';
 import { HomePlatosService } from 'src/services/home-platos.service';
 import { PlatosService } from 'src/services/platos.service';
-
+import {CorroborarPlatosService} from 'src/services/corroborar-platos.service'
 
 
 @NgModule({
@@ -28,9 +28,10 @@ import { PlatosService } from 'src/services/platos.service';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
-  providers: [HomePlatosService,PlatosService],
+  providers: [HomePlatosService,PlatosService, CorroborarPlatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
