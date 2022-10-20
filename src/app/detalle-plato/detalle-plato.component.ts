@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PlatosService } from 'src/services/platos.service';
 
 @Component({
   selector: 'app-detalle-plato',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetallePlatoComponent implements OnInit {
 
-  constructor() { }
+  plato:any = [] ;
+
+  constructor(private route: ActivatedRoute, private PlatosService:PlatosService) { }
 
   ngOnInit(): void {
+    let id: any = this.route.snapshot.paramMap.get('id');
+    this.PlatosService.getDetallesPlatos(id).subscribe((datos: any) => {
+    this.plato = datos;
+    })
   }
 
 }

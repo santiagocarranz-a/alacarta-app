@@ -17,5 +17,9 @@ export class PlatosService {
     return this.http.get(`${this.apiUrl}recipes/complexSearch?apiKey=${this.apiKey2}&query=${busqueda}&addRecipeInformation=true&addRecipeNutrition=true`)
   }
 
+  getDetallesPlatos (id:any){
+    return this.http.get(`${this.apiUrl}recipes/${id}/information?apiKey=${this.apiKey2}`)
+  }
+  
 
 }

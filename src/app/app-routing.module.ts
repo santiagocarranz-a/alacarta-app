@@ -9,13 +9,14 @@ import { SearchPageComponent } from './pages/search-page/search/search-page.comp
 const routes:Routes=[
   {path:"home", component:HomeComponent},
   {path:"form",component:FormComponent},
-  {path:"detallePlato",component:DetallePlatoComponent},
+  {path:"detallePlato/:id",component:DetallePlatoComponent},
   {path:"searchPage",component:SearchPageComponent}
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [ RouterModule.forRoot(routes, {onSameUrlNavigation: "reload"})],
   exports: [RouterModule]
+
 })
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent,FormComponent,DetallePlatoComponent,BuscadorDePlatosComponent]
