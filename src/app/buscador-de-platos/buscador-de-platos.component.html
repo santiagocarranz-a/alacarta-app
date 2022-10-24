@@ -1,0 +1,10 @@
+<div class="divH2">
+  <h2 style="text-align: center;">Aquí podrás elegir el plato que gustes</h2>
+</div>
+<hr>
+
+<div class="search">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="txtPlato" (keydown)=keyDownEnter($event)>
+  <button class="btn btn-outline-success" type="submit" (click)="getPlatos()">Search</button>
+</div>
+

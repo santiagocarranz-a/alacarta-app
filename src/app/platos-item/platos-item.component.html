@@ -1,0 +1,53 @@
+<div class="container-divs" *ngIf="componentDetalles; else componentDetallesTrue">
+  <div class="card" style="width: 19rem;">
+      <img src="{{plato.image}}" class="card-img-top" alt="..." >
+      <div class="card-body">
+        <h4 class="card-title">{{plato.title}}</h4>
+        <p class="card-text"></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Precio: {{plato.pricePerServing}}</li>
+        <li class="list-group-item">Tiempo de preparacion: {{plato.readyInMinutes}}</li>
+        <li class="list-group-item">Health Score: {{plato.healthScore}}</li>
+        <li class="list-group-item">Vegano: {{plato.vegan===true?"si":"no"}}</li>
+      </ul>
+      <div class="cont-button">
+        <div *ngIf="botonCorrespondiente; else botonAgregar">
+          <button  href="" type="button" class="btn btn-info"  (click)="obtDetallesPlatos(plato.id)">Detalles</button>
+          <button  href="" type="button" class="btn btn-warning" (click)="eliminarPlatos(plato)">Eliminar</button>
+        </div>
+        <ng-template #botonAgregar>
+          <button  href="" type="button" class="btn btn-success" (click)="guardarPlatos(plato)">Agregar</button>
+        </ng-template>
+      </div>
+  </div>
+</div>
+
+<!-- Item para detalle-plato-component -->
+<ng-template #componentDetallesTrue>
+  <div class="container-divs " >
+    <div class="card" style="width: 52rem;">
+        <img src="{{plato.image}}" class="card-img-top" alt="..." >
+        <div class="card-body">
+          <h4 class="card-title">{{plato.title}}</h4>
+          <p class="card-text"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item listDetalle"> {{obtenerSummary(plato.summary)}} </li>
+          <li class="list-group-item">Precio: {{plato.pricePerServing}}</li>
+          <li class="list-group-item">Tiempo de preparacion: {{plato.readyInMinutes}}</li>
+          <li class="list-group-item">Health Score: {{plato.healthScore}}</li>
+          <li class="list-group-item">Vegano: {{plato.vegan===true?"si":"no"}}</li>
+        </ul>
+        <div class="cont-button">
+          <div *ngIf="botonCorrespondiente; else botonAgregar">
+            <button  href="" type="button" class="btn btn-info"  (click)="obtDetallesPlatos(plato.id)">Detalles</button>
+            <button  href="" type="button" class="btn btn-warning" (click)="eliminarPlatos(plato)">Eliminar</button>
+          </div>
+          <ng-template #botonAgregar>
+            <button href="" type="button" class="btn btn-success" (click)="guardarPlatos(plato)">Agregar</button>
+          </ng-template>
+        </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+.logo{
+    text-align: center;
+    font-family: 'Nabla';
+    font-size: 4rem;
+    background-color: black;
+}
+.container-flex{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
