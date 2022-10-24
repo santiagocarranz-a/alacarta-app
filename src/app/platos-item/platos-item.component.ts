@@ -37,9 +37,64 @@ export class PlatosItemComponent implements OnInit {
 
   constructor(private HPS: HomePlatosService, private CPS:CorroborarPlatosService, private router:Router) { }
 
+/*
+Problema a resolver:
+Dentro de funcPlatosVeganos ()
+El for hace un recorrido y encuentra que no se cumple la condicion de que es menor a 1 en platosVeganos o platosNoveganos ,entonces devuelve TRUE en cada recorrido, aunque quiera agregar un plato del tipo del cual no tengo 2 platos.
+*/
+
+  funcPlatosVeganos(data:any){
+    let platosNoVeganos = 0
+    let platosVeganos = 0
+
+    for(let item of data){
+      if(item.vegan===false){
+        if(platosNoVeganos<1){
+          platosNoVeganos++
+          console.log("platos No veganos"+ platosNoVeganos)
+        }else{
+          console.log("no se puede agregar más de 2 platos no veganos")
+          return true
+        }
+      }else{
+        if(platosVeganos<1){
+          platosVeganos++
+          console.log("platos veganos"+ platosVeganos)
+        }else{
+          console.log("no se puede agregar más de 2 platos veganos")
+          return true
+        }
+      }
+    }
+    return false
+  }
+
+//Prueba 1
+/*
+    let platosNoVeganos = 0
+    let items
+
+    for(let item of data){
+      if(item.vegan===false){
+        console.log("item.vegan es FALSE")
+      }
+      platosNoVeganos += item.vegan
+      console.log(platosNoVeganos)
+      console.log(item.vegan)
+
+    }
+
+    if(platosNoVeganos>1){
+      console.log("no se puede agregar más de 2 platos veganos")
+      return true
+    }
+    return false
+  }
+*/
+
   guardarPlatos(plato:any){
-  
     this.HPS.getPlatos().subscribe(data=>{
+
       if(data===null||undefined){
         this.sweetalert.fire({
           icon: 'success',
@@ -47,29 +102,27 @@ export class PlatosItemComponent implements OnInit {
           text: 'Se ha guardado el plato.',
         })
         this.HPS.addPlato(plato);
-        return    
-      }
-    })
-
-
-    this.HPS.getPlatos().subscribe(data=>{
-      this.platos = Object.values(data)
-      console.log(this.platos)
-      this.platosLength = Object.values(data).length
-
-      if(this.platosLength<4){
-        this.sweetalert.fire({
-          icon: 'success',
-          title: 'Exito!',
-          text: 'Se ha guardado el plato.',
-        })
-        this.HPS.addPlato(plato);
-        console.log(this.platosLength)
+        
       }else{
-        console.log("no se puede agregar más de 4 platos")
+        this.platos = Object.values(data)
+        console.log(this.platos)
+        this.platosLength = Object.values(data).length
+        if(this.funcPlatosVeganos(this.platos)===false){
+          console.log()
+          if(this.platosLength<4){
+            this.sweetalert.fire({
+              icon: 'success',
+              title: 'Exito!',
+              text: 'Se ha guardado el plato.',
+            })
+            this.HPS.addPlato(plato);
+            console.log(this.platosLength)
+          }else{
+            console.log("no se puede agregar más de 4 platos")
+          }
+        }
       }
     })
-
   }
 
   eliminarPlatos(plato:any){
