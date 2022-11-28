@@ -7,7 +7,7 @@
 - npm install --save jquery
 - npm install --save popper.js
 
-Challenge Alkemy
+Challenge Alkemy - Angular
 <br>
-Create by Santiago Carranza 
+
 
