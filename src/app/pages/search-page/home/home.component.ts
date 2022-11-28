@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
         this.arrayPlatos=Object.values(data);
         this.HPS.newArrayPlatos(this.arrayPlatos);
         }else{
-          console.log("no hay platos")
+        //  console.log("no hay platos")
         }
 
     })

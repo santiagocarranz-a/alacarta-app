@@ -94,7 +94,13 @@ El for hace un recorrido y encuentra que no se cumple la condicion de que es men
 
   guardarPlatos(plato:any){
     this.HPS.getPlatos().subscribe(data=>{
+      this.sweetalert.fire({
+        icon: 'success',
+        title: 'Se ha guardado el plato!',
+      })
+      this.HPS.addPlato(plato);
 
+/*
       if(data===null||undefined){
         this.sweetalert.fire({
           icon: 'success',
@@ -122,20 +128,20 @@ El for hace un recorrido y encuentra que no se cumple la condicion de que es men
           }
         }
       }
+*/
     })
   }
 
   eliminarPlatos(plato:any){
     this.sweetalert.fire({
       icon: 'warning',
-      title: 'Exito...',
-      text: 'Se ha eliminado el plato!',
+      title: 'Se ha eliminado el plato!',
     })
 
     const platoAEliminar = plato
     const arrayPlatoBorrado = this.HPS.arrayPlatos.filter(data => data != platoAEliminar)
     this.HPS.newArrayPlatos(arrayPlatoBorrado)
-    console.log(this.HPS.arrayPlatos)
+    //console.log(this.HPS.arrayPlatos)
     this.HPS.putPlato()
 
     setTimeout(()=>{

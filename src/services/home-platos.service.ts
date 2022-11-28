@@ -1,18 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable()
 export class HomePlatosService {
 
+  private firebase:string=environment.firebase;
   arrayPlatos:Array<any>= []; 
   plato:any = [];
   healthScore:number = 0;
   precio:number = 0;
   timePreparation:number = 0;
   platosVeganos:number = 0
-
+  
   constructor(private httpPlatos:HttpClient, public router:Router) { }
 
   newArrayPlatos(data:Array<any>){
@@ -22,20 +24,20 @@ export class HomePlatosService {
   
 // Firebase
   putPlato(){
-    this.httpPlatos.put('https://a-la-carta-challenge-alk-b6c50-default-rtdb.firebaseio.com/datos.json',this.arrayPlatos).subscribe({
-      next: (v) => console.log('Se ha modificado el array ' + v),
-      error: (e) => console.log('Error' + e),
+    this.httpPlatos.put(this.firebase,this.arrayPlatos).subscribe({
+    //  next: (v) => console.log('Se ha modificado el array ' + v),
+    //  error: (e) => console.log('Error' + e),
     });
   }
 
   getPlatos(){
-    return this.httpPlatos.get('https://a-la-carta-challenge-alk-b6c50-default-rtdb.firebaseio.com/datos.json')
+    return this.httpPlatos.get(this.firebase)
   }
 
   addPlato (plato:any){
-    this.httpPlatos.post('https://a-la-carta-challenge-alk-b6c50-default-rtdb.firebaseio.com/datos.json',plato).subscribe({
-      next: (v) => console.log('Se ha guardado el plato ' + v),
-      error: (e) => console.log('Error' + e),
+    this.httpPlatos.post(this.firebase,plato).subscribe({
+    //  next: (v) => console.log('Se ha guardado el plato ' + v),
+    //  error: (e) => console.log('Error' + e),
     });
   }
 
@@ -65,7 +67,7 @@ export class HomePlatosService {
         this.timePreparation = parseFloat(this.timePreparation.toFixed(2))
 
       }else{
-        console.log("no hay platos")
+      //  console.log("no hay platos")
       }
 
     })  
