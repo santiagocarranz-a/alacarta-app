@@ -3,7 +3,7 @@
 
 Demo:https://a-la-carta.netlify.app/
 
-En ésta aplicación se le da un servicio a los clientes del restaurante "a la carta" para que puedan conocer los platos que se preparan allí.
+App que brinda servicio de búsqueda, elección e informativo sobre los platos que se preparan en el restaurante "a-la-carta".
 
 ## Secciones:
 ```
