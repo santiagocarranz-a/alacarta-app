@@ -40,7 +40,6 @@ export class BuscadorDePlatosComponent implements OnInit {
     })
     }else{
       this.platosService.getPlatos(busqueda).subscribe((platos:any) =>{
-  
         this.catalogoPlatos.emit(platos.results);
     })
     }
